@@ -1,0 +1,8 @@
+1. npm init -y   = to create package.json file
+2. create server.js 
+3. type script start in package.json file with "node server.js"
+4. install express
+5. write first api inside server.js 
+6. restart the server and request the port no. http://localhost:8000
+7. install nodemon 
+8. replace node to nodemon in package.json file under start script
