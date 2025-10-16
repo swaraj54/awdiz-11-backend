@@ -3,16 +3,24 @@ import dotenv from "dotenv";
 
 const app = express();
 dotenv.config();
+app.use(express.json());
+
+var users = [{},{},{}];
 
 app.get("/", (req, res) => {
-  console.log(process.env.JWT_SECRET, "- process.env.JWT_SECRET");
-  console.log(process.env.MONGODB_URL, "- process.env.MONGODB_URL");
   res.send("Welcome to the Express server!");
 });
 
+
+app.post("/login", (req, res) => {
+  // console.log(req.body, "req.body");
+  const { email, password } = req.body;
+  console.log(email,"email")
+
+  res.send(email);
+});
+
 app.get("/payments/get", (req, res) => {
-  console.log(process.env.JWT_SECRET, "- process.env.JWT_SECRET");
-  console.log(process.env.MONGODB_URL, "- process.env.MONGODB_URL");
   res.send("swaraj!");
 });
 

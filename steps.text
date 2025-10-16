@@ -6,3 +6,10 @@
 6. restart the server and request the port no. http://localhost:8000
 7. install nodemon 
 8. replace node to nodemon in package.json file under start script
+
+
+9. install dotenv package
+10. inside server.js import and config dotenv package.
+10. create .env file insdie parent directory
+11. write environment varibles inside .env file with key and value 
+12. to use environment varibles with syntax =  process.env.varible_name
