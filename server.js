@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1", mainRouter);
 
-mongoose.connect(process.env.MONGODB_URL).then(() => console.log("DB Connected swaraj!"));
+mongoose.connect(process.env.MONGODB_URL).then(() => console.log("DB Connected!"));
 
 app.listen(8000, () => {
   console.log("Server is running on http://localhost:8000");
