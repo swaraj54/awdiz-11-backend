@@ -1,5 +1,6 @@
 import User from "../models/user.schema.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 export const Login = async (req, res) => {
   try {
@@ -28,6 +29,21 @@ export const Login = async (req, res) => {
         .status(401)
         .json({ message: "Invalid Password", success: false });
     }
+
+    // 1. token generation
+    const token = jwt.sign(
+      { userId: isUserExists._id },
+      process.env.JWT_SECRET
+    );
+    console.log(token, "token");
+
+    // 2. set cookies - token
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      // secure: true, // for https
+    });
+
     return res.status(200).json({
       message: "Login Successful",
       success: true,
@@ -75,3 +91,29 @@ export const Register = async (req, res) => {
 };
 
 // export { Login, Register };
+
+export const getCurrentUser = async (req, res) => {
+  try {
+    // const token = req.cookies.token;
+    // console.log("Token from cookies:", token);
+    console.log(req.userId, "req.userId");
+
+    const isUserExists = await User.findById(req.userId);
+    if (!isUserExists) {
+      return res
+        .status(404)
+        .json({ message: "User not found", success: false });
+    }
+
+    return res.status(200).json({
+      message: "Login Successful",
+      success: true,
+      user: { name: isUserExists.name, userId: isUserExists._id },
+    });
+  } catch (error) {
+    console.log("error", error);
+    res
+      .status(500)
+      .send({ message: "Error in getting current user", success: false });
+  }
+};
