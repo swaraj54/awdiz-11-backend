@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1", tokenDecoder , mainRouter);
+// app.use("/api/v1",  mainRouter);
 
 mongoose
   .connect(process.env.MONGODB_URL)

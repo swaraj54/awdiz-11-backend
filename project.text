@@ -1,0 +1,5 @@
+Auth - register, login, get-current-user - COMPLETED
+Sellers - register, login, get-current-user - COMPLETED
+Sellers - Products Add - relation between schemas, Product edit delete, Proudcts View, Orders  - PENDING
+Users - Products , Single Product, Cart, Payment success, Orders - PENDING
+Admin - Orders, User, Seller, All Product - ASSIGNMENT
