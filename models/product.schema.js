@@ -8,6 +8,7 @@ const ProductSchema = new Schema({
   inStock: { type: Boolean, default: true },
   quantity: { type: Number, required: true },
   seller: { type: mongoose.Schema.Types.ObjectId, ref: "sellers" },
+  isDeleted: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now },
 });
 

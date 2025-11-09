@@ -1,5 +1,14 @@
-Auth - register, login, get-current-user - COMPLETED
-Sellers - register, login, get-current-user - COMPLETED
-Sellers - Products Add - relation between schemas, Product edit delete, Proudcts View, Orders  - PENDING
-Users - Products , Single Product, Cart, Payment success, Orders - PENDING
+User - Auth - register, login, get-current-user, logout - COMPLETED
+Sellers - register, login, get-current-user, logout - COMPLETED
+Sellers - Products Add - relation between schemas, Product edit delete, Proudcts View, Orders  - COMPLETED
+Users - Products , Single Product - COMPLETED 
+ Cart, Payment success, Orders - PENDING
 Admin - Orders, User, Seller, All Product - ASSIGNMENT
+
+assignment 9-11
+1. Product edit delete
+2. Apply filter with same api on app products page for user 
+3. Add to cart  - if docuement exists with userid then just update the products array else create full docuement
+ USE addtoset 
+
+ View Cart 

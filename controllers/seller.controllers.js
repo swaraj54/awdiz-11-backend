@@ -25,3 +25,16 @@ export const AddProduct = async (req, res) => {
       .send({ message: "Error in getting current user", success: false });
   }
 };
+
+export const getProductsForSeller = async (req, res) => {
+  try {
+    const userId = req.userId;
+    const products = await Product.find({ seller: userId, isDeleted: false });
+    return res.json({ success: true, products });
+  } catch (error) {
+    console.log("error", error);
+    res
+      .status(500)
+      .send({ message: "Error in getting current user", success: false });
+  }
+};
