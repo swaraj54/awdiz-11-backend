@@ -2,11 +2,10 @@ import jwt from "jsonwebtoken";
 export const tokenDecoder = (req, res, next) => {
   try {
     const openRoutes = [
-      "/api/v1/auth/login",
-      "/api/v1/auth/register",
-      "/api/v1/products/get-products",
+      "/auth/login",
+      "/auth/register",
+      "/products/get-products",
     ];
-
     // Skip middleware for certain routes
     if (openRoutes.includes(req.path)) {
       return next();
