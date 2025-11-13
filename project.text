@@ -2,8 +2,10 @@ User - Auth - register, login, get-current-user, logout - COMPLETED
 Sellers - register, login, get-current-user, logout - COMPLETED
 Sellers - Products Add - relation between schemas, Product edit delete, Proudcts View, Orders  - COMPLETED
 Users - Products , Single Product - COMPLETED 
- Cart, Payment success, Orders - PENDING
+ Cart, Payment success, Orders - COMPLETED
 Admin - Orders, User, Seller, All Product - ASSIGNMENT
+
+
 
 assignment 9-11
 1. Product edit delete
@@ -12,3 +14,12 @@ assignment 9-11
  USE addtoset 
 
  View Cart 
+
+ Assignment 13-11
+
+ Place Order - 
+    // check if have stock, quantity < 1 , remove it from cart 
+    // Product document reduce the quantity, quantity :  100 -> 99
+    // display order to respective seller -> Order schema Products Populate Seller 
+    Write a  api for seller to fetch order -> 
+

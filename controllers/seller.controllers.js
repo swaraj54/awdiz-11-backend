@@ -29,7 +29,7 @@ export const AddProduct = async (req, res) => {
 export const getProductsForSeller = async (req, res) => {
   try {
     const userId = req.userId;
-    const products = await Product.find({ seller: userId, isDeleted: false });
+    const products = await Product.find({ seller: userId });
     return res.json({ success: true, products });
   } catch (error) {
     console.log("error", error);

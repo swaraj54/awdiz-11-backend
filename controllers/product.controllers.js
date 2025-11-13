@@ -6,7 +6,7 @@ export const CreateProduct = (req, res) => {
 
 export const GetProducts = async (req, res) => {
   try {
-    const products = await Product.find({ isDeleted: false });
+    const products = await Product.find({});
     return res.json({ success: true, products });
   } catch (error) {
     console.log("error", error);
