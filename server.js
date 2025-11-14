@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { tokenDecoder } from "./middlewares/tokenMiddlware.js";
+import Product from "./models/product.schema.js";
 
 const app = express();
 dotenv.config();
@@ -20,8 +21,19 @@ app.get("/", (req, res) => {
   res.send("Server is up and running");
 });
 
-app.use("/api/v1", tokenDecoder , mainRouter);
+app.use("/api/v1", tokenDecoder, mainRouter);
 // app.use("/api/v1",  mainRouter);
+
+app.get("/test", async (req, res) => {
+  try {
+    const products = await Product.find({
+      $nor: [{ price: { $gt: 50000 } }, { quantity: { $nin: [100, 20] } }],
+    });
+
+    // const Products = await Product.find({ age: { $eq: 18 } });
+    res.send(products);
+  } catch (error) {}
+});
 
 mongoose
   .connect(process.env.MONGODB_URL)

@@ -41,7 +41,9 @@ export const getCartProducts = async (req, res) => {
   try {
     const userId = req.userId;
 
-    let cart = await Cart.findOne({ user: userId }).populate({
+    let cart = await User.find({
+      $and: [{ age: { $gt: 18 } }, { isVerified: { $eq: true } }, ],
+    }).populate({
       path: "products",
       select: "name imgUrl category price inStock",
     });

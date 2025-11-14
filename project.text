@@ -1,8 +1,10 @@
 User - Auth - register, login, get-current-user, logout - COMPLETED
 Sellers - register, login, get-current-user, logout - COMPLETED
-Sellers - Products Add - relation between schemas, Product edit delete, Proudcts View, Orders  - COMPLETED
+Sellers - Products Add - relation between schemas, Product edit delete, Proudcts View, - COMPLETED,  
 Users - Products , Single Product - COMPLETED 
  Cart, Payment success, Orders - COMPLETED
+
+Seller - View Orders - ASSIGNMENT
 Admin - Orders, User, Seller, All Product - ASSIGNMENT
 
 
@@ -18,8 +20,28 @@ assignment 9-11
  Assignment 13-11
 
  Place Order - 
-    // check if have stock, quantity < 1 , remove it from cart 
+    // check if have stock, quantity > 0 , remove it from cart 
     // Product document reduce the quantity, quantity :  100 -> 99
     // display order to respective seller -> Order schema Products Populate Seller 
     Write a  api for seller to fetch order -> 
+
+
+
+
+Full stack 
+Frontend Backend Database  
+NO authentication
+
+Scehma 
+Blog - 
+comment {user : , comment [{comnet, user},{}]}
+
+Blog Application
+1. Blog Create - Form - Title, blog text, user name
+2. View Blogs
+3. Single Blog - Comment and user name
+Comment feature on blog 
+
+https://medium.com/@adevnadia/react-server-components-do-they-really-improve-performance-7fb7a263e2dd
+
 
