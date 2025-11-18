@@ -35,6 +35,23 @@ app.get("/test", async (req, res) => {
   } catch (error) {}
 });
 
+app.get("/matching-grouping", async (req, res) => {
+  try {
+    const products = await Product.aggregate([
+      { $match: { price: { $gt: 100 } } },
+      {
+        $group: {
+          _id: "$category",
+          totalQuantity: { $sum: "$quantity" },
+          totalPrice: { $sum: { $multiply: ["$quantity", "$price"] } },
+          
+        },
+      },
+    ]);
+    res.send(products);
+  } catch (error) {}
+});
+
 mongoose
   .connect(process.env.MONGODB_URL)
   .then(() => console.log("DB Connected!"));
