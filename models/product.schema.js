@@ -10,6 +10,9 @@ const ProductSchema = new Schema({
   seller: { type: mongoose.Schema.Types.ObjectId, ref: "sellers" },
   isDeleted: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now },
+  genderCategory: { type: String, required: true },
+  subCategory: { type: String, required: true },
+  brandCategory: { type: String, required: true },
 });
 
 const Product = mongoose.model("products", ProductSchema);

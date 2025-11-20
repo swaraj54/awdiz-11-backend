@@ -6,6 +6,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import { tokenDecoder } from "./middlewares/tokenMiddlware.js";
 import Product from "./models/product.schema.js";
+import Order from "./models/order.schema.js";
 
 const app = express();
 dotenv.config();
@@ -44,13 +45,45 @@ app.get("/matching-grouping", async (req, res) => {
           _id: "$category",
           totalQuantity: { $sum: "$quantity" },
           totalPrice: { $sum: { $multiply: ["$quantity", "$price"] } },
-          
         },
       },
     ]);
-    res.send(products);
+    res.send(products); //[{_id : "clothing"},{_id : "footwear"}]
   } catch (error) {}
 });
+
+// try $unwind with empty products array
+app.get("/unwinding", async (req, res) => {
+  try {
+    // const products = await Order.find({})
+    const products = await Order.aggregate([
+      { $unwind: "$products" },
+      { $project: { user: 1, products: 1, price: 1, _id: 0 } },
+    ]);
+    res.send(products); //[{_id : "clothing"},{_id : "footwear"}]
+  } catch (error) {}
+});
+// {
+//   user : "ajkbnawbdyawt67889",
+//   products : ["1productId","2productId","3productId"],
+//   price : 234543
+// }
+// {
+//   user : "ajkbnawbdyawt67889",
+//   products : "1productId",
+//   price : 234543
+// }
+// {
+//   user : "ajkbnawbdyawt67889",
+//   products : "2productId",
+//   price : 234543
+// }
+
+// {
+//   user : "ajkbnawbdyawt67889",
+//   products : "3productId",
+//   price : 234543
+// }
 
 mongoose
   .connect(process.env.MONGODB_URL)

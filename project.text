@@ -1,11 +1,15 @@
-User - Auth - register, login, get-current-user, logout - COMPLETED
-Sellers - register, login, get-current-user, logout - COMPLETED
-Sellers - Products Add - relation between schemas, Product edit delete, Proudcts View, - COMPLETED,  
-Users - Products , Single Product - COMPLETED 
- Cart, Payment success, Orders - COMPLETED
+User - Auth - register, login, get-current-user, logout - COMPLETED - Saturday 22-11
+Sellers - register, login, get-current-user, logout - COMPLETED - Sunday 23-11
+Sellers - Products Add - relation between schemas, Product edit delete, Proudcts View, - COMPLETED, Tuesday - 25-11
+Users - Products , Single Product - COMPLETED , Thursday - 27-11
+ Cart, Payment success, Orders - COMPLETED - Saturday 29-11
 
-Seller - View Orders - ASSIGNMENT
-Admin - Orders, User, Seller, All Product - ASSIGNMENT
+Seller - View Orders - ASSIGNMENT, Sunday 30-11
+Admin - Orders, User, Seller, All Product - ASSIGNMENT, 2-12
+
+Deploy - fe - be - 2-12
+
+
 
 
 
