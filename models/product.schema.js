@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 const ProductSchema = new Schema({
   name: { type: String, required: true },
-  imgUrl: { type: String, required: true },
+  imgUrl: [{ type: String, required: true }],
   category: { type: String, required: false },
   price: { type: Number, required: true },
   inStock: { type: Boolean, default: true },
